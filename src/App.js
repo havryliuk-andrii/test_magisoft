@@ -1,13 +1,13 @@
 import React from 'react';
 import {AppWrapper} from './modules/common/styles'
 import Header from './modules/common/header';
-import { BookingForm } from './modules/booking/components/BookingForm';
+import { BookingFormContainer } from './modules/booking/containers/BooingFormContainer';
 
 function App() {
   return (
     <AppWrapper>
       <Header />
-      <BookingForm/>
+      <BookingFormContainer/>
     </AppWrapper>
   );
 }

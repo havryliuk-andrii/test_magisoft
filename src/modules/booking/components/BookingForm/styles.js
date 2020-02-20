@@ -9,13 +9,43 @@ export const TravelForm = styled.form`
     font-size:4rem;
    
 `
-export const FieldInfo = styled.div`
-    /* display:flex; */
+export const DestinationWrapper = styled.div`
+    position: relative;
+`
 
-    /* > :nth-child(2){
+export const DestinationList = styled.div`
+    position: absolute;
+    padding:1.8rem 0;
+    background-color: ${colors.white};
+    border: .2rem solid ${colors.bgDark};
+    border-top: none;
+    border-bottom-left-radius:.8rem;
+    border-bottom-right-radius:.8rem;
+    margin:0 .3rem;
+    width:calc(100% - .3rem);
+    top:70%;
+    left:0;
+`
+
+export const DestinationListItem = styled.div`
+    padding:1rem 0;
+    padding-left:2rem;
+    &:hover{
+        background-color: ${colors.primary};
+        color:${colors.white};
+        cursor:pointer;
+    }
+`
+
+export const FieldInfo = styled.div`
+    display:flex; 
+    > :nth-child(2){
         margin-left:2rem;
-        color:${colors.danger}
-    } */
+        color:${colors.danger};
+        font-size:2.8rem;
+        display: flex;
+        align-items:flex-end;
+    }
 `
 
 export const Persons = styled.div`
@@ -33,6 +63,7 @@ export const Input = styled(SimpleInput)`
     margin: 1.5rem .3rem;
     width:calc(100% - .3rem);
     height:5rem;
+    padding-left:2rem;
 `
 export const ButtonWrapper = styled.div`
     display: flex;
