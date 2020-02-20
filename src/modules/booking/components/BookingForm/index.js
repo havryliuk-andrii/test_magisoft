@@ -1,100 +1,18 @@
 import React from 'react'
-import formik, { Formik } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup'
-import { useState } from 'react';
 import {
     TravelForm,
-    Input,
-    FieldInfo,
     Persons,
     Button,
     ButtonWrapper,
-    DestinationList,
-    DestinationWrapper,
-    DestinationListItem
 } from './styles';
+import { CreateField } from './CreateField';
+import { Destination } from './Destination';
 
-const Destination = ({formik, ...props}) =>{
-    const [isDestinationListShown,setIsDestinationListShown] = useState(false)
-    const [isOverDropList,setIsOverDropList] = useState(false);
-    const handleFocus=()=>{setIsDestinationListShown(true)}
-    const handleBlur=(e)=>{
-        if(!isOverDropList){
-            formik.handleBlur(e)
-            setIsDestinationListShown(false)
-        }            
-    }
-    const handleMouseEnter =(e)=>{setIsOverDropList(true)}
-    const handleMouseLeave =(e)=>{setIsOverDropList(false)}
 
-    const setDestination =(el)=>{
-        formik.setFieldValue(destination, el);
-        setIsDestinationListShown(false)
-        setIsOverDropList(false)
-    }
 
-    const dropList = ['London', 'Kiev', 'Moscow', 'Tokyo','Riga','Monaco'].map((el,ind)=>(
-        <DestinationListItem 
-            key ={ind} 
-            onClick={()=>setDestination(el)}
-        >
-                {el}
-        </DestinationListItem>
-    ))
-    
-    return(
-        <div className="destinationWr">
-            <FieldInfo>
-                <label htmlFor="firstName">Destination</label>
-                {formik.touched.destination && formik.errors.destination ? (
-                    <div>{formik.errors.destination}</div>
-                ) : null}
-            </FieldInfo>
-            <DestinationWrapper>
-                <Input
-                    id="destination"
-                    name="destination"
-                    type="text"
-                    onChange={formik.handleChange}
-                    onBlur={handleBlur}
-                    onFocus={handleFocus}
-                    value={formik.values.destination}
-                    autocomplete='no'
-                />
-                {isDestinationListShown?
-                    <DestinationList
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        {dropList}
-                    </DestinationList>    
-                    :null        
-                }
-            </DestinationWrapper>
-        </div>
-    )
-}
 
-const CreateField = (formik,label,name,type)=>{
-    return(
-        <div>
-            <FieldInfo>
-                <label htmlFor="firstName">{label}</label>
-                {formik.touched[name] && formik.errors[name] ? (
-                    <div>{formik.errors[name]}</div>
-                ) : null}
-            </FieldInfo>
-            <Input
-                id={name}
-                name={name}
-                type={type}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values[name]}
-            />
-        </div>
-    )
-}
 
 const [destination,checkIn,checkOut,adults,children] =
     ['destination','checkIn','checkOut','adults','children']
@@ -138,9 +56,9 @@ export const BookingForm =({submitHandler})=>{
             initialValues={initValues}
             validationSchema={validationSchema}
             onSubmit={submitHandler}
-        >{(props)=>
+        >{props=>
             <TravelForm onSubmit={props.handleSubmit} >
-                <Destination formik={props} />
+                <Destination formik={props} name={destination} />
                 {CreateField(props,'Chek-in',checkIn,'date')}
                 {CreateField(props,'Chek-out',checkOut,'date')}
                 <Persons>

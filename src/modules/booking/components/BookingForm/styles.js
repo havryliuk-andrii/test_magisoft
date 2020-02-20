@@ -1,40 +1,21 @@
 import styled from 'styled-components';
 import { SimpleInput, PrimaryButton } from '../../../common/styles';
 import { colors } from '../../../../constants';
+import { Form } from 'formik';
 
-export const TravelForm = styled.form`
+export const TravelForm = styled(Form)`
     padding-top:4rem;
     display: grid;
     grid-template: repeat(5,minmax(0,1ft)) / auto;
     font-size:4rem;
    
 `
-export const DestinationWrapper = styled.div`
-    position: relative;
-`
 
-export const DestinationList = styled.div`
-    position: absolute;
-    padding:1.8rem 0;
-    background-color: ${colors.white};
-    border: .2rem solid ${colors.bgDark};
-    border-top: none;
-    border-bottom-left-radius:.8rem;
-    border-bottom-right-radius:.8rem;
-    margin:0 .3rem;
+export const Input = styled(SimpleInput)`
+    margin: 1.5rem .3rem;
     width:calc(100% - .3rem);
-    top:70%;
-    left:0;
-`
-
-export const DestinationListItem = styled.div`
-    padding:1rem 0;
+    height:5rem;
     padding-left:2rem;
-    &:hover{
-        background-color: ${colors.primary};
-        color:${colors.white};
-        cursor:pointer;
-    }
 `
 
 export const FieldInfo = styled.div`
@@ -59,12 +40,7 @@ export const Persons = styled.div`
     }
 `
 
-export const Input = styled(SimpleInput)`
-    margin: 1.5rem .3rem;
-    width:calc(100% - .3rem);
-    height:5rem;
-    padding-left:2rem;
-`
+
 export const ButtonWrapper = styled.div`
     display: flex;
     flex-direction:column;
