@@ -9,6 +9,18 @@ export const TravelForm = styled(Form)`
     grid-template: repeat(5,minmax(0,1ft)) / auto;
     font-size:4rem;
    
+   @media (min-width:725px) {
+    margin-bottom:10rem;
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr 1fr 1fr;
+    padding-top:0rem;
+    margin-top:0rem;
+    background-color: ${colors.white};
+    border: .2rem solid ${colors.bgDark};
+    >*{
+        flex:1;
+    }
+   }
 `
 
 export const Input = styled(SimpleInput)`
@@ -27,6 +39,26 @@ export const FieldInfo = styled.div`
         display: flex;
         align-items:flex-end;
     }
+
+    @media (min-width:725px) {
+        >:nth-child(2){
+            display: none;
+        }
+    }
+`
+
+export const DesktopError = styled.div`
+    display:none;
+    
+    @media (min-width:725px) {
+        display: block;
+        color:${colors.danger};
+        font-size:2.8rem;
+        padding:.6rem;
+        padding-top:0;
+        padding-bottom:1rem;
+    }
+
 `
 
 export const Persons = styled.div`
@@ -38,14 +70,38 @@ export const Persons = styled.div`
     > :last-child{
         margin-left:2rem;
     }
+
+    @media (min-width:725px) {
+        display: grid;
+        >:last-child,>*:first-child{
+            margin:0;
+            grid-template: 1fr 1fr/1fr;
+        }
+    }
 `
 
 
 export const ButtonWrapper = styled.div`
     display: flex;
     flex-direction:column;
-    justify-content:flex-end
+    justify-content:flex-end;
+
+    @media (min-width:601px) {
+        display: flex;
+        padding-top:auto;
+        flex-direction:row;
+        align-items:flex-start;
+        justify-content:flex-end;
+    }
 `
 export const Button = styled(PrimaryButton)`
     height:13vw;
+    
+    @media (min-width:601px) {
+        margin-top:3.6rem;
+        margin-right:1.1rem;
+        margin-left:1.1rem;
+        width:calc(100% - .3rem);
+        height:5rem;
+    }
 `

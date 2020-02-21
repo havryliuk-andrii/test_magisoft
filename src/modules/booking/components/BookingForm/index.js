@@ -11,9 +11,6 @@ import { CreateField } from './CreateField';
 import { Destination } from './Destination';
 
 
-
-
-
 const [destination,checkIn,checkOut,adults,children] =
     ['destination','checkIn','checkOut','adults','children']
 

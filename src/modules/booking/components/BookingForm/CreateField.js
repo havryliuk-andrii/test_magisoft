@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, FieldInfo } from './styles';
+import { Input, FieldInfo, DesktopError } from './styles';
 
 
 export const CreateField = (formik,label,name,type)=>{
@@ -19,6 +19,11 @@ export const CreateField = (formik,label,name,type)=>{
                 onBlur={formik.handleBlur}
                 value={formik.values[name]}
             />
+            <DesktopError>
+                {formik.touched[name] && formik.errors[name] ? (
+                    <div>{formik.errors[name]}</div>
+                ) : null}
+            </DesktopError>
         </div>
     )
 }

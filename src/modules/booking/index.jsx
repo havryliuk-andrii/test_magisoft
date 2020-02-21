@@ -1,13 +1,14 @@
 import React from 'react'
-import { Logo, CompanyName, HeaderWrapper } from './styles';
+import { BookingFormContainer } from './containers/BooingFormContainer';
+import { TravelDescription } from './components/TravelDescription';
 
-const Header = (props) =>{
+const BookingPage = (props) =>{
     return (
-        <HeaderWrapper>
-          <Logo/>
-          <CompanyName>TRAVOLTA</CompanyName>
-        </HeaderWrapper>
+      <main className="bookingPage">
+        <BookingFormContainer/>
+        <TravelDescription/>
+      </main>        
     )
 }
 
-export default Header
+export default BookingPage

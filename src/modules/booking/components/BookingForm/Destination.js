@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import { colors } from '../../../../constants';
-import { FieldInfo, Input } from './styles';
+import { FieldInfo, Input, DesktopError } from './styles';
 
 export const Destination = ({formik,name, ...props}) =>{
     const [isDestinationListShown,setIsDestinationListShown] = useState(false)
@@ -60,6 +60,11 @@ export const Destination = ({formik,name, ...props}) =>{
                     :null        
                 }
             </DestinationWrapper>
+            <DesktopError>
+                {formik.touched[name] && formik.errors[name] ? (
+                    <div>{formik.errors[name]}</div>
+                ) : null}
+            </DesktopError>
         </div>
     )
 }
