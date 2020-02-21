@@ -48,10 +48,20 @@ export const BookingForm =({submitHandler})=>{
                 .required('Required')        
     })
 
+    const validate = (values,props)=>{
+        const errors={}
+
+        if(values.checkIn===values.checkOut)
+         errors[checkOut] = 'Must be later than chek-in'
+
+        return errors;
+    }
+    
     return(
         <Formik
             initialValues={initValues}
             validationSchema={validationSchema}
+            validate={validate}
             onSubmit={submitHandler}
         >{props=>
             <TravelForm onSubmit={props.handleSubmit} >

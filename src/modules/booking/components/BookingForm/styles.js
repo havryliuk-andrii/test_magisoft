@@ -20,11 +20,14 @@ export const TravelForm = styled(Form)`
     >*{
         flex:1;
     }
+    >*:first-child{
+        margin-left:1.1rem;
+    }
    }
 `
 
 export const Input = styled(SimpleInput)`
-    margin: 1.5rem .3rem;
+    margin: .7rem .3rem;
     width:calc(100% - .3rem);
     height:5rem;
     padding-left:2rem;
@@ -41,6 +44,7 @@ export const FieldInfo = styled.div`
     }
 
     @media (min-width:725px) {
+        margin-top:2rem;
         >:nth-child(2){
             display: none;
         }
@@ -98,7 +102,7 @@ export const Button = styled(PrimaryButton)`
     height:13vw;
     
     @media (min-width:601px) {
-        margin-top:3.6rem;
+        margin-top:4.8rem;
         margin-right:1.1rem;
         margin-left:1.1rem;
         width:calc(100% - .3rem);
