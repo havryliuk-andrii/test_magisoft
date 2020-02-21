@@ -15,7 +15,7 @@ export const TravelDescription =()=> {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, excepturi 
                 officiis perspiciatis unde atque laboriosam vitae eum adipisci magni nulla te
                 mporibus quo, alias id. Doloribus aspernatur culpa velit similique, nostrum qui
-                s dolorem voluptates pariatur debitis voluptatibus soluta vitae nobis laboriosam 
+                s dolorem voluptates pariatur
                 Lorem ipsum dolor sit amet.
             </DescriptionBody>
         </DescriptionSection>

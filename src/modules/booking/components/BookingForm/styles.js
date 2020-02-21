@@ -4,16 +4,19 @@ import { colors } from '../../../../constants';
 import { Form } from 'formik';
 
 export const TravelForm = styled(Form)`
-    padding-top:4rem;
+    padding-top:0rem;
     display: grid;
     grid-template: repeat(5,minmax(0,1ft)) / auto;
     font-size:4rem;
+    height:100%;
    
+    @media (min-width:601px) {
+        padding-top:2rem;
+    }
    @media (min-width:725px) {
     margin-bottom:10rem;
     display: grid;
     grid-template: 1fr / 1fr 1fr 1fr 1fr 1fr;
-    padding-top:0rem;
     margin-top:0rem;
     background-color: ${colors.white};
     border: .2rem solid ${colors.bgDark};
