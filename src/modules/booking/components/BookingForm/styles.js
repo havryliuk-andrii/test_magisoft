@@ -13,6 +13,7 @@ export const TravelForm = styled(Form)`
     @media (min-width:601px) {
         padding-top:2rem;
     }
+    
    @media (min-width:725px) {
     margin-bottom:10rem;
     display: grid;
